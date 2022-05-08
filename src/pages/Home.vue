@@ -164,13 +164,14 @@ onMounted(() => {
     scrollSpeed = x - oldScrollX;
     oldScrollX = x;
 
-    let a = scrollSpeed > 0 ? 1 : -1;
+    // 方向
+    let direction = scrollSpeed > 0 ? 1 : -1;
 
     gsap.to(cardBoxs, {
       scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.005,
       // rotate: scrollSpeed * 0.2,
       rotateX: scrollSpeed * 1.2,
-      rotateY: scrollSpeed * 1.2 * a,
+      rotateY: scrollSpeed * 1.2 * direction,
       duration: 0.01,
     });
   };
