@@ -50,7 +50,7 @@ export default {
 
       cardTagSubtag.value.style.transform = `rotateZ(-90deg)`;
       cardTagSubtag.value.style.top = `13%`;
-      cardTagSubtag.value.style.left = `-28%`;
+      cardTagSubtag.value.style.left = `-22%`;
 
       cardImg.value.addEventListener("mousemove", (event) => {
         cardImg.value.style.transition = "none";
@@ -124,15 +124,15 @@ export default {
   padding: 80px 0px;
   position: relative;
   perspective: 1000px;
-  width: 400px;
-    height: 400px;
+  width: 480px;
+  height: 480px;
 }
 .card-img {
-  width: 240px;
-  height: 240px;
+  width: 300px;
+  height: 300px;
   position: absolute;
   z-index: 1;
-  transition: all 0.5s;
+  transition: border 0.5s;
   transform: translateX(100px) translateY(100px);
 }
 
@@ -142,14 +142,18 @@ export default {
   font-weight: 900;
 }
 
+.card-img:hover ~ .card-img-bg {
+  border: 5px solid #000;
+}
+
 .card-img-bg {
   content: "";
   position: absolute;
-  width: 240px;
-  height: 240px;
-  border: 6px solid #000;
+  width: 300px;
+  height: 300px;
+  border: 4px solid #000;
   z-index: 0;
-  transition: all 0.5s;
+  transition: border 0.5s;
 }
 .card-tag-subtag {
   position: absolute;
